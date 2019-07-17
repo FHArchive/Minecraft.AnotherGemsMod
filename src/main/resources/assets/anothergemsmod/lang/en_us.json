@@ -1,0 +1,21 @@
+{
+  "item.anothergemsmod.aquamarine": "Aquamarine",
+  "item.anothergemsmod.galaxite": "Galaxite",
+  "item.anothergemsmod.lonsdaleite": "Lonsdaleite",
+  "item.anothergemsmod.zircon": "Zircon",
+  "item.anothergemsmod.zirconia": "Zirconia",
+
+  "block.anothergemsmod.aquamarine_ore": "Aquamarine Ore",
+  "block.anothergemsmod.galaxite_ore": "Galaxite Ore",
+  "block.anothergemsmod.lonsdaleite_ore": "Lonsdaleite Ore",
+  "block.anothergemsmod.zircon_ore": "Zircon Ore",
+  "block.anothergemsmod.zirconia_ore": "Zirconia Ore",
+
+  "block.anothergemsmod.aquamarine_block": "Block of Aquamarine",
+  "block.anothergemsmod.galaxite_block": "Block of Galaxite",
+  "block.anothergemsmod.lonsdaleite_block": "Block of Lonsdaleite",
+  "block.anothergemsmod.zircon_block": "Block of Zircon",
+  "block.anothergemsmod.zirconia_block": "Block of Zirconia",
+
+  "itemGroup.anothergemsmod": "Another Gems Mod"
+}

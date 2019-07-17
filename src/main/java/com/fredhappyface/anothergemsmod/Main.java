@@ -30,8 +30,8 @@ public class Main
         // We cannot use method references here because it could load classes on invalid sides.
         //noinspection Convert2MethodRef
         DistExecutor.runForDist(
-                () -> () -> new SideProxy.Client(),
-                () -> () -> new SideProxy.Server()
+                () -> () -> new Workers.Client(),
+                () -> () -> new Workers.Server()
         );
     }
 

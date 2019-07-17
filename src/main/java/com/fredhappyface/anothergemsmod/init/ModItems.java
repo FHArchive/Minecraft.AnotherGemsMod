@@ -7,7 +7,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -29,7 +28,9 @@ public class ModItems {
 
 
         // Items
-
+        for (ModGems gem : ModGems.values()) {
+            register(gem.getName(), gem.getGemItem());
+        }
 
     }
 

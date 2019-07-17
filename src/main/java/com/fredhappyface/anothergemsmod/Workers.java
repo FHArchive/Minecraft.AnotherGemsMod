@@ -10,16 +10,16 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 
 /**
- * SideProxy allows client and server code to be separated, while executing common code on both
+ * Workers allows client and server code to be separated, while executing common code on both
  * sides. You could use this just for the sided code, but I initialize everything in proxy classes.
  * There are two nested classes, {@link Client} and {@link Server}.
  */
-class SideProxy {
-    SideProxy() {
+class Workers {
+    Workers() {
         // Register the setup, enqueueIMC, and processIMC methods for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::commonSetup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::enqueueIMC);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::processIMC);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(Workers::commonSetup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(Workers::enqueueIMC);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(Workers::processIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ModBlocks::registerAll);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ModItems::registerAll);
 
@@ -43,7 +43,7 @@ class SideProxy {
     /*
     Client only
      */
-    static class Client extends SideProxy {
+    static class Client extends Workers {
         Client() {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(Client::clientSetup);
         }
@@ -55,7 +55,7 @@ class SideProxy {
     /*
     Server only
      */
-    static class Server extends SideProxy {
+    static class Server extends Workers {
         Server() {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(Server::serverSetup);
         }
