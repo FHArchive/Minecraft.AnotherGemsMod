@@ -12,9 +12,13 @@ import net.minecraft.item.Item;
  * by ModItemTier
  */
 public class ToolAttrs {
+
+    private Item.Properties itemProperties = new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_TOOLS);
+    private double NOT_SWORD_MODIFIER = 0.7;
+
+
     private int attackDamageIn;
     private float attackSpeedIn;
-    private Item.Properties itemProperties = new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_TOOLS);
 
     // Used by ModItemTier
     private int harvestLevelIn;
@@ -54,10 +58,18 @@ public class ToolAttrs {
     }
 
     public int getAttackDamageIn() {
-        return attackDamageIn;
+        return (int)(attackDamageIn * NOT_SWORD_MODIFIER);
     }
 
     public float getAttackSpeedIn() {
+        return (float)(attackSpeedIn * NOT_SWORD_MODIFIER);
+    }
+
+    public int getSwordAttackDamageIn() {
+        return attackDamageIn;
+    }
+
+    public float getSwordAttackSpeedIn() {
         return attackSpeedIn;
     }
 

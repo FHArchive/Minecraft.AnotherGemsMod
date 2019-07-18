@@ -19,14 +19,15 @@ public class OreGenAttrs {
      * @param veinSize number of ore in a vein
      */
     public OreGenAttrs(int harvestLevel, int veinSize){
-        this(harvestLevel, new CountRangeConfig(15, 20,0, 15), veinSize);
+        this(harvestLevel, new CountRangeConfig(15, 20,30, 50), veinSize);
 
     }
 
     /**
      *
      * @param harvestLevel pick level required to obtain tbe ore
-     * @param countRangeConfig settings for the ore clusters in a chunk
+     * @param countRangeConfig settings for the ore clusters in a chunk. Count - Number of clusters per chunk. BottomOffset -
+     *                         Minimum y level. TopOffset - y = World surface - value?? INFO NEEDED. Maximum - Maximum y level
      * @param veinSize number of ore in a vein
      */
     public OreGenAttrs(int harvestLevel, CountRangeConfig countRangeConfig, int veinSize){

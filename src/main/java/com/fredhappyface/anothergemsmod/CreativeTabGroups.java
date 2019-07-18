@@ -29,7 +29,7 @@ public class CreativeTabGroups {
     };
 
      */
-    /*
+
     public static final ItemGroup ITEM_GROUP_ARMOUR = new ItemGroup(Main.MOD_ID + ".armour") {
         @Override
         public ItemStack createIcon() {
@@ -37,7 +37,7 @@ public class CreativeTabGroups {
         }
     };
 
-     */
+
     
 
 }
