@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": {
+        "tag": "forge:ores/lonsdaleite"
+    },
+    "result": "anothergemsmod:lonsdaleite",
+    "experience": 0.75,
+    "cookingTime": 200
+}

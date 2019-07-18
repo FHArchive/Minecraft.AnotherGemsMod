@@ -1,0 +1,13 @@
+{
+    "type": "crafting_shapeless",
+    "group": "anothergemsmod:gem",
+    "ingredients": [
+        {
+            "tag": "forge:storage_blocks/zircon"
+        }
+    ],
+    "result": {
+        "item": "anothergemsmod:zircon",
+        "count": 9
+    }
+}

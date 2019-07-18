@@ -17,5 +17,38 @@
   "block.anothergemsmod.zircon_block": "Block of Zircon",
   "block.anothergemsmod.zirconia_block": "Block of Zirconia",
 
-  "itemGroup.anothergemsmod": "Another Gems Mod"
+  "item.anothergemsmod.aquamarine_pickaxe": "Aquamarine Pickaxe",
+  "item.anothergemsmod.galaxite_pickaxe": "Galaxite Pickaxe",
+  "item.anothergemsmod.lonsdaleite_pickaxe": "Lonsdaleite Pickaxe",
+  "item.anothergemsmod.zircon_pickaxe": "Zircon Pickaxe",
+  "item.anothergemsmod.zirconia_pickaxe": "Zirconia Pickaxe",
+
+  "item.anothergemsmod.aquamarine_axe": "Aquamarine Axe",
+  "item.anothergemsmod.galaxite_axe": "Galaxite Axe",
+  "item.anothergemsmod.lonsdaleite_axe": "Lonsdaleite Axe",
+  "item.anothergemsmod.zircon_axe": "Zircon Axe",
+  "item.anothergemsmod.zirconia_axe": "Zirconia Axe",
+
+  "item.anothergemsmod.aquamarine_hoe": "Aquamarine Hoe",
+  "item.anothergemsmod.galaxite_hoe": "Galaxite Hoe",
+  "item.anothergemsmod.lonsdaleite_hoe": "Lonsdaleite Hoe",
+  "item.anothergemsmod.zircon_hoe": "Zircon Hoe",
+  "item.anothergemsmod.zirconia_hoe": "Zirconia Hoe",
+
+  "item.anothergemsmod.aquamarine_shovel": "Aquamarine Shovel",
+  "item.anothergemsmod.galaxite_shovel": "Galaxite Shovel",
+  "item.anothergemsmod.lonsdaleite_shovel": "Lonsdaleite Shovel",
+  "item.anothergemsmod.zircon_shovel": "Zircon Shovel",
+  "item.anothergemsmod.zirconia_shovel": "Zirconia Shovel",
+
+  "item.anothergemsmod.aquamarine_sword": "Aquamarine Sword",
+  "item.anothergemsmod.galaxite_sword": "Galaxite Sword",
+  "item.anothergemsmod.lonsdaleite_sword": "Lonsdaleite Sword",
+  "item.anothergemsmod.zircon_sword": "Zircon Sword",
+  "item.anothergemsmod.zirconia_sword": "Zirconia Sword",
+
+  "itemGroup.anothergemsmod.resources": "Another Gems Mod Resources",
+  "itemGroup.anothergemsmod.tools": "Another Gems Mod Tools",
+  "itemGroup.anothergemsmod.weapons": "Another Gems Mod Weapons",
+  "itemGroup.anothergemsmod.armour": "Another Gems Mod Armour"
 }

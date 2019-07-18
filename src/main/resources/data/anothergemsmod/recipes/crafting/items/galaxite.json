@@ -1,0 +1,13 @@
+{
+    "type": "crafting_shapeless",
+    "group": "anothergemsmod:gem",
+    "ingredients": [
+        {
+            "tag": "forge:storage_blocks/galaxite"
+        }
+    ],
+    "result": {
+        "item": "anothergemsmod:galaxite",
+        "count": 9
+    }
+}

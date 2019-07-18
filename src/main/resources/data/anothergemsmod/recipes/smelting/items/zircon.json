@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": {
+        "tag": "forge:ores/zircon"
+    },
+    "result": "anothergemsmod:zircon",
+    "experience": 0.75,
+    "cookingTime": 200
+}

@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": {
+        "tag": "forge:ores/zirconia"
+    },
+    "result": "anothergemsmod:zirconia",
+    "experience": 0.75,
+    "cookingTime": 200
+}
