@@ -1,10 +1,10 @@
 package com.fredhappyface.anothergemsmod.enumeration;
 
 import com.fredhappyface.anothergemsmod.CreativeTabGroups;
+import com.fredhappyface.anothergemsmod.Main;
 import com.fredhappyface.anothergemsmod.lib.blocks.ModOreBlock;
 import com.fredhappyface.anothergemsmod.lib.blocks.ModStairsBlock;
 import com.fredhappyface.anothergemsmod.lib.data.*;
-import com.fredhappyface.anothergemsmod.lib.items.ModArmorItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
@@ -115,12 +115,12 @@ public enum ModGems {
 
         // Armour (enchantability is from tool attributes)
 
-        ModArmorMaterial armorMaterial = new ModArmorMaterial(getName(),getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), gemIngredient);
+        ModArmorMaterial armorMaterial = new ModArmorMaterial(Main.MOD_ID + ":" + getName(),getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), gemIngredient);
 
-        helm = new LazyLoadBase<>(() -> new ModArmorItem(armorMaterial, EquipmentSlotType.HEAD, getArmorAttrs().getItemProperties()));
-        chest = new LazyLoadBase<>(() -> new ModArmorItem(armorMaterial, EquipmentSlotType.CHEST, getArmorAttrs().getItemProperties()));
-        leggings = new LazyLoadBase<>(() -> new ModArmorItem(armorMaterial, EquipmentSlotType.LEGS, getArmorAttrs().getItemProperties()));
-        boots = new LazyLoadBase<>(() -> new ModArmorItem(armorMaterial, EquipmentSlotType.FEET, getArmorAttrs().getItemProperties()));
+        helm = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.HEAD, getArmorAttrs().getItemProperties()));
+        chest = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.CHEST, getArmorAttrs().getItemProperties()));
+        leggings = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.LEGS, getArmorAttrs().getItemProperties()));
+        boots = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.FEET, getArmorAttrs().getItemProperties()));
 
         
 

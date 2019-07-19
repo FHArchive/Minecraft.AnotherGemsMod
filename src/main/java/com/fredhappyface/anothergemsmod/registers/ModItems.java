@@ -56,22 +56,21 @@ public class ModItems {
         }
 
         // Armour
-        if(Main.isDevBuild()) {
-            for (ModGems gem : ModGems.values()) {
-                register(ARMOUR + gem.getName() + "_helm", gem.getHelm());
-            }
-            for (ModGems gem : ModGems.values()) {
-                register(ARMOUR + gem.getName() + "_chest", gem.getChest());
-            }
-            for (ModGems gem : ModGems.values()) {
-                register(ARMOUR + gem.getName() + "_leggings", gem.getLeggings());
-            }
-            for (ModGems gem : ModGems.values()) {
-                register(ARMOUR + gem.getName() + "_boots", gem.getBoots());
-            }
+        for (ModGems gem : ModGems.values()) {
+            register(ARMOUR + gem.getName() + "_helm", gem.getHelm());
         }
-
+        for (ModGems gem : ModGems.values()) {
+            register(ARMOUR + gem.getName() + "_chest", gem.getChest());
+        }
+        for (ModGems gem : ModGems.values()) {
+            register(ARMOUR + gem.getName() + "_leggings", gem.getLeggings());
+        }
+        for (ModGems gem : ModGems.values()) {
+            register(ARMOUR + gem.getName() + "_boots", gem.getBoots());
+        }
     }
+
+
 
     /**
      * Register an item to the creative mode tab and to the game
