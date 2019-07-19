@@ -47,6 +47,32 @@
   "item.anothergemsmod.tools.zircon_sword": "Zircon Sword",
   "item.anothergemsmod.tools.zirconia_sword": "Zirconia Sword",
 
+  "item.anothergemsmod.armor.aquamarine_boots": "Aquamarine Boots",
+  "item.anothergemsmod.armor.galaxite_boots": "Galaxite Boots",
+  "item.anothergemsmod.armor.lonsdaleite_boots": "Lonsdaleite Boots",
+  "item.anothergemsmod.armor.zircon_boots": "Zircon Boots",
+  "item.anothergemsmod.armor.zirconia_boots": "Zirconia Boots",
+
+  "item.anothergemsmod.armor.aquamarine_chest": "Aquamarine Chestpiece",
+  "item.anothergemsmod.armor.galaxite_chest": "Galaxite Chestpiece",
+  "item.anothergemsmod.armor.lonsdaleite_chest": "Lonsdaleite Chestpiece",
+  "item.anothergemsmod.armor.zircon_chest": "Zircon Chestpiece",
+  "item.anothergemsmod.armor.zirconia_chest": "Zirconia Chestpiece",
+
+  "item.anothergemsmod.armor.aquamarine_helm": "Aquamarine Helm",
+  "item.anothergemsmod.armor.galaxite_helm": "Galaxite Helm",
+  "item.anothergemsmod.armor.lonsdaleite_helm": "Lonsdaleite Helm",
+  "item.anothergemsmod.armor.zircon_helm": "Zircon Helm",
+  "item.anothergemsmod.armor.zirconia_helm": "Zirconia Helm",
+
+  "item.anothergemsmod.armor.aquamarine_leggings": "Aquamarine Leggings",
+  "item.anothergemsmod.armor.galaxite_leggings": "Galaxite Leggings",
+  "item.anothergemsmod.armor.lonsdaleite_leggings": "Lonsdaleite Leggings",
+  "item.anothergemsmod.armor.zircon_leggings": "Zircon Leggings",
+  "item.anothergemsmod.armor.zirconia_leggings": "Zirconia Leggings",
+
+
+
   "block.anothergemsmod.decorations.aquamarine_brick_slab": "Aquamarine Brick Slab",
   "block.anothergemsmod.decorations.galaxite_brick_slab": "Galaxite Brick Slab",
   "block.anothergemsmod.decorations.lonsdaleite_brick_slab": "Lonsdaleite Brick Slab",
