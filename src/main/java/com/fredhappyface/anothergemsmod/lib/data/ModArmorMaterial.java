@@ -34,15 +34,15 @@ public class ModArmorMaterial implements IArmorMaterial {
     //   }),
 
     /**
-     *
+     * @param name required to load the texture (must add!)
      * @param maxDamageFactor number of hits or used to derive said value?
      * @param damageReductionAmountArray number of hp to reduce damage by
      * @param enchantability same as for tools
      * @param toughness ???
      * @param repairMaterial Ingredient.fromItems(ITEM)
      */
-    public ModArmorMaterial(int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, float toughness, Supplier<Ingredient>  repairMaterial) {
-        this("name", maxDamageFactor, damageReductionAmountArray, enchantability, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,toughness, repairMaterial);
+    public ModArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, float toughness, Supplier<Ingredient>  repairMaterial) {
+        this(name, maxDamageFactor, damageReductionAmountArray, enchantability, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,toughness, repairMaterial);
     }
 
     public ModArmorMaterial(String nameIn, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent, float toughness, Supplier<Ingredient> repairMaterial) {

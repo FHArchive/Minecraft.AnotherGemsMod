@@ -1,10 +1,14 @@
 package com.fredhappyface.anothergemsmod.enumeration;
 
 import com.fredhappyface.anothergemsmod.CreativeTabGroups;
-import com.fredhappyface.anothergemsmod.lib.blocks.OreBlock;
+import com.fredhappyface.anothergemsmod.lib.blocks.ModOreBlock;
+import com.fredhappyface.anothergemsmod.lib.blocks.ModStairsBlock;
 import com.fredhappyface.anothergemsmod.lib.data.*;
+import com.fredhappyface.anothergemsmod.lib.items.ModArmorItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
@@ -43,11 +47,17 @@ public enum ModGems {
 
 
     // Resources
-    private final LazyLoadBase<OreBlock> oreBlock;
+    private final LazyLoadBase<ModOreBlock> oreBlock;
     private final LazyLoadBase<Item> gemItem;
 
     // Blocks
     private final LazyLoadBase<Block> storageBlock;
+    private final LazyLoadBase<Block> bricks;
+    private final LazyLoadBase<SlabBlock> slab;
+    private final LazyLoadBase<StairsBlock> stairs;
+    private final LazyLoadBase<SlabBlock> brickSlab;
+    private final LazyLoadBase<StairsBlock> brickStairs;
+    //private final LazyLoadBase<StairsBlock> brickWall;
 
     // Tools
     private final LazyLoadBase<PickaxeItem> pickaxe;
@@ -72,12 +82,21 @@ public enum ModGems {
 
 
         // Resources
-        oreBlock = new LazyLoadBase<>(() -> new OreBlock(oreGenAttrs.getHarvestLevel()));
+        oreBlock = new LazyLoadBase<>(() -> new ModOreBlock(oreGenAttrs.getHarvestLevel()));
         gemItem = new LazyLoadBase<>(() -> new Item(new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_RESOURCES)));
 
 
         // Blocks
-        storageBlock = new LazyLoadBase<>(() -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(5, 6).sound(SoundType.METAL)));
+
+        Block.Properties gemBlockProperties = Block.Properties.create(Material.IRON).hardnessAndResistance(5, 6).sound(SoundType.METAL);
+
+        storageBlock = new LazyLoadBase<>(() -> new Block(gemBlockProperties));
+        bricks = new LazyLoadBase<>(() -> new Block(gemBlockProperties));
+        slab = new LazyLoadBase<>(() -> new SlabBlock(gemBlockProperties));
+        stairs = new LazyLoadBase<>(() -> new ModStairsBlock(getStorageBlock().getDefaultState(),gemBlockProperties));
+        brickSlab = new LazyLoadBase<>(() -> new SlabBlock(gemBlockProperties));
+        brickStairs = new LazyLoadBase<>(() -> new ModStairsBlock(getStorageBlock().getDefaultState(),gemBlockProperties));
+        //brickWall = new LazyLoadBase<>(() -> new WallBlock(gemBlockProperties));
 
 
         // Tools
@@ -96,12 +115,12 @@ public enum ModGems {
 
         // Armour (enchantability is from tool attributes)
 
-        ModArmorMaterial armorMaterial = new ModArmorMaterial(getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), gemIngredient);
+        ModArmorMaterial armorMaterial = new ModArmorMaterial(getName(),getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), gemIngredient);
 
-        helm = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.HEAD, getArmorAttrs().getItemProperties()));
-        chest = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.CHEST, getArmorAttrs().getItemProperties()));
-        leggings = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.LEGS, getArmorAttrs().getItemProperties()));
-        boots = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.FEET, getArmorAttrs().getItemProperties()));
+        helm = new LazyLoadBase<>(() -> new ModArmorItem(armorMaterial, EquipmentSlotType.HEAD, getArmorAttrs().getItemProperties()));
+        chest = new LazyLoadBase<>(() -> new ModArmorItem(armorMaterial, EquipmentSlotType.CHEST, getArmorAttrs().getItemProperties()));
+        leggings = new LazyLoadBase<>(() -> new ModArmorItem(armorMaterial, EquipmentSlotType.LEGS, getArmorAttrs().getItemProperties()));
+        boots = new LazyLoadBase<>(() -> new ModArmorItem(armorMaterial, EquipmentSlotType.FEET, getArmorAttrs().getItemProperties()));
 
         
 
@@ -126,7 +145,7 @@ public enum ModGems {
 
 
     // Resources
-    public OreBlock getOreBlock() {
+    public ModOreBlock getOreBlock() {
         return oreBlock.getValue();
     }
     public Item getGemItem() {
@@ -138,7 +157,21 @@ public enum ModGems {
     public Block getStorageBlock() {
         return storageBlock.getValue();
     }
-
+    public Block getBricks() {
+        return bricks.getValue();
+    }
+    public SlabBlock getSlab() {
+        return slab.getValue();
+    }
+    public StairsBlock getStairs() {
+        return stairs.getValue();
+    }
+    public SlabBlock getBrickSlab() {
+        return brickSlab.getValue();
+    }
+    public StairsBlock getBrickStairs() {
+        return brickStairs.getValue();
+    }
 
     // Tools
     public PickaxeItem getPickaxeItem(){

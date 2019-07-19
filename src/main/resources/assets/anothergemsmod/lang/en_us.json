@@ -47,8 +47,38 @@
   "item.anothergemsmod.tools.zircon_sword": "Zircon Sword",
   "item.anothergemsmod.tools.zirconia_sword": "Zirconia Sword",
 
+  "block.anothergemsmod.decorations.aquamarine_brick_slab": "Aquamarine Brick Slab",
+  "block.anothergemsmod.decorations.galaxite_brick_slab": "Galaxite Brick Slab",
+  "block.anothergemsmod.decorations.lonsdaleite_brick_slab": "Lonsdaleite Brick Slab",
+  "block.anothergemsmod.decorations.zircon_brick_slab": "Zircon Brick Slab",
+  "block.anothergemsmod.decorations.zirconia_brick_slab": "Zirconia Brick Slab",
+
+  "block.anothergemsmod.decorations.aquamarine_brick_stairs": "Aquamarine Brick Stairs",
+  "block.anothergemsmod.decorations.galaxite_brick_stairs": "Galaxite Brick Stairs",
+  "block.anothergemsmod.decorations.lonsdaleite_brick_stairs": "Lonsdaleite Brick Stairs",
+  "block.anothergemsmod.decorations.zircon_brick_stairs": "Zircon Brick Stairs",
+  "block.anothergemsmod.decorations.zirconia_brick_stairs": "Zirconia Brick Stairs",
+
+  "block.anothergemsmod.decorations.aquamarine_bricks": "Aquamarine Bricks",
+  "block.anothergemsmod.decorations.galaxite_bricks": "Galaxite Bricks",
+  "block.anothergemsmod.decorations.lonsdaleite_bricks": "Lonsdaleite Bricks",
+  "block.anothergemsmod.decorations.zircon_bricks": "Zircon Bricks",
+  "block.anothergemsmod.decorations.zirconia_bricks": "Zirconia Bricks",
+
+  "block.anothergemsmod.decorations.aquamarine_slab": "Aquamarine Slab",
+  "block.anothergemsmod.decorations.galaxite_slab": "Galaxite Slab",
+  "block.anothergemsmod.decorations.lonsdaleite_slab": "Lonsdaleite Slab",
+  "block.anothergemsmod.decorations.zircon_slab": "Zircon Slab",
+  "block.anothergemsmod.decorations.zirconia_slab": "Zirconia Slab",
+
+  "block.anothergemsmod.decorations.aquamarine_stairs": "Aquamarine Stairs",
+  "block.anothergemsmod.decorations.galaxite_stairs": "Galaxite Stairs",
+  "block.anothergemsmod.decorations.lonsdaleite_stairs": "Lonsdaleite Stairs",
+  "block.anothergemsmod.decorations.zircon_stairs": "Zircon Stairs",
+  "block.anothergemsmod.decorations.zirconia_stairs": "Zirconia Stairs",
+
   "itemGroup.anothergemsmod.resources": "Another Gems Mod Resources",
   "itemGroup.anothergemsmod.tools": "Another Gems Mod Tools",
-  "itemGroup.anothergemsmod.weapons": "Another Gems Mod Weapons",
+  "itemGroup.anothergemsmod.decoration": "Another Gems Mod Decoration Blocks",
   "itemGroup.anothergemsmod.armor": "Another Gems Mod Armour"
 }

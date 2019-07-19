@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "anothergemsmod:block/storage_block/lonsdaleite_block",
+    "top": "anothergemsmod:block/storage_block/lonsdaleite_block",
+    "side": "anothergemsmod:block/storage_block/lonsdaleite_block"
+  }
+}

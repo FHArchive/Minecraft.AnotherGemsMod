@@ -19,21 +19,18 @@ public class CreativeTabGroups {
         }
     };
 
-    // Additional groups (hidden)
-    /*
-    public static final ItemGroup ITEM_GROUP_WEAPONS = new ItemGroup(Main.MOD_ID + ".weapons") {
+    public static final ItemGroup ITEM_GROUP_DECORATION = new ItemGroup(Main.MOD_ID + ".decoration") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ModGems.AQUAMARINE.getOreBlock());
+            return new ItemStack(ModGems.AQUAMARINE.getBricks());
         }
     };
 
-     */
 
     public static final ItemGroup ITEM_GROUP_ARMOUR = new ItemGroup(Main.MOD_ID + ".armor") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ModGems.AQUAMARINE.getOreBlock());
+            return new ItemStack(ModGems.AQUAMARINE.getChest());
         }
     };
 

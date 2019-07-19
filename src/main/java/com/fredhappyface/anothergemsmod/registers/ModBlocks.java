@@ -6,6 +6,7 @@ import com.fredhappyface.anothergemsmod.enumeration.ModGems;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -28,6 +29,9 @@ public class ModBlocks {
             return;
         }
 
+        // Namespaces
+        String DECORATIONS  = "decorations/";
+
 
         // Example block registration
         /*
@@ -44,6 +48,15 @@ public class ModBlocks {
         for (ModGems gem : ModGems.values()) {
             register("ore/" +gem.getName() + "_ore", gem.getOreBlock());
         }
+        // Decoration Blocks, Slabs, Stairs
+        for (ModGems gem : ModGems.values()) {
+            register(DECORATIONS + gem.getName() + "_bricks", gem.getBricks(), CreativeTabGroups.ITEM_GROUP_DECORATION);
+            register(DECORATIONS + gem.getName() + "_brick_slab", gem.getBrickSlab(), CreativeTabGroups.ITEM_GROUP_DECORATION);
+            register(DECORATIONS + gem.getName() + "_brick_stairs", gem.getBrickStairs(), CreativeTabGroups.ITEM_GROUP_DECORATION);
+            register(DECORATIONS + gem.getName() + "_slab", gem.getSlab(), CreativeTabGroups.ITEM_GROUP_DECORATION);
+            register(DECORATIONS + gem.getName() + "_stairs", gem.getStairs(), CreativeTabGroups.ITEM_GROUP_DECORATION);
+
+        }
 
     }
 
@@ -55,6 +68,10 @@ public class ModBlocks {
      */
     private static <T extends Block> T register(String name, T block){
         return register(name, block, new BlockItem(block, new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_RESOURCES)));
+    }
+
+    private static <T extends Block> T register(String name, T block, ItemGroup itemGroup){
+        return register(name, block, new BlockItem(block, new Item.Properties().group(itemGroup)));
     }
 
     /**
