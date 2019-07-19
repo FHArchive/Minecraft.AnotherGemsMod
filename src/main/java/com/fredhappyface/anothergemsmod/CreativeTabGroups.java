@@ -30,7 +30,7 @@ public class CreativeTabGroups {
 
      */
 
-    public static final ItemGroup ITEM_GROUP_ARMOUR = new ItemGroup(Main.MOD_ID + ".armour") {
+    public static final ItemGroup ITEM_GROUP_ARMOUR = new ItemGroup(Main.MOD_ID + ".armor") {
         @Override
         public ItemStack createIcon() {
             return new ItemStack(ModGems.AQUAMARINE.getOreBlock());

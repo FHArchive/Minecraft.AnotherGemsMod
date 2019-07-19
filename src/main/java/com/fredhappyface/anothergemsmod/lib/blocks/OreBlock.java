@@ -6,16 +6,19 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorldReader;
 
-import javax.annotation.Nullable;
-
+/**
+ * @author FredHappyface
+ * @version latest update 2019.07.18
+ *
+ * Custom ore block with custom implementation of get exp and get harvest level
+ */
 public class OreBlock extends net.minecraft.block.OreBlock {
-    @Nullable
     private final int harvestLevel;
 
 
     /**
      * Define an OreBlock
-     * @param harvestLevel
+     * @param harvestLevel level of tool required to obtain ore
      */
     public OreBlock(int harvestLevel) {
         this(Properties.create(Material.ROCK).hardnessAndResistance(3, 3), harvestLevel);

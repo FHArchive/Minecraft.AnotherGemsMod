@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values": [
-        "anothergemsmod:lonsdaleite_ore"
+        "anothergemsmod:ore/lonsdaleite_ore"
     ]
 }

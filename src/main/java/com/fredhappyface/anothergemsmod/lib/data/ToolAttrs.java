@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 
 /**
  * @author FredHappyface
- * @date 2019/07/18
+ * @version latest update 2019.07.18
  *
  * Object holding data for tool attributes. harvestLevelIn, maxUsesIn, efficiencyIn, maxDamageIn, enchantabilityIn is used
  * by ModItemTier
@@ -29,8 +29,8 @@ public class ToolAttrs {
 
     /**
      * Lazy constructor, use if you are hardcoding values for ModItemTier
-     * @param attackDamageIn
-     * @param attackSpeedIn
+     * @param attackDamageIn attack damage for sword
+     * @param attackSpeedIn attack speed for sword
      */
     public ToolAttrs(int attackDamageIn, float attackSpeedIn) {
         this(attackDamageIn, attackSpeedIn, 0,0,0,0,0);
@@ -39,13 +39,13 @@ public class ToolAttrs {
     /**
      * Required if enumerating tools with different ModItemTier properties. Use getters to access these properties. eg.
      * getAttackDamageIn to get attackDamageIn
-     * @param attackDamageIn
-     * @param attackSpeedIn
-     * @param harvestLevelIn
-     * @param maxUsesIn
-     * @param efficiencyIn
-     * @param maxDamageIn
-     * @param enchantabilityIn
+     * @param attackDamageIn attack damage for sword
+     * @param attackSpeedIn attack speed for sword
+     * @param harvestLevelIn int for harvest level wood is 0, stone 1, iron 2, and diamond 3
+     * @param maxUsesIn number of blocks that can be broken wood is 59, diamond is approx 1500
+     * @param efficiencyIn speed of block break diamond is around 10?
+     * @param maxDamageIn ??? unknown effect
+     * @param enchantabilityIn ??? unknown effect
      */
     public ToolAttrs(int attackDamageIn, float attackSpeedIn, int harvestLevelIn, int maxUsesIn, float efficiencyIn, float maxDamageIn, int enchantabilityIn) {
         this.attackDamageIn = attackDamageIn;

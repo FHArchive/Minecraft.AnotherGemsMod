@@ -11,6 +11,13 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
+/**
+ * @author FredHappyface
+ * @version latest update 2019.07.18
+ *
+ * Set the properties of modded armor eg. new ModArmorMaterial("diamond", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
+ *       return Ingredient.fromItems(Items.DIAMOND);for diamond armor
+ */
 public class ModArmorMaterial implements IArmorMaterial {
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
     private final String name;
@@ -25,6 +32,15 @@ public class ModArmorMaterial implements IArmorMaterial {
     // eg ModArmorMaterial("diamond", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
     //      return Ingredient.fromItems(Items.DIAMOND);
     //   }),
+
+    /**
+     *
+     * @param maxDamageFactor number of hits or used to derive said value?
+     * @param damageReductionAmountArray number of hp to reduce damage by
+     * @param enchantability same as for tools
+     * @param toughness ???
+     * @param repairMaterial Ingredient.fromItems(ITEM)
+     */
     public ModArmorMaterial(int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, float toughness, Supplier<Ingredient>  repairMaterial) {
         this("name", maxDamageFactor, damageReductionAmountArray, enchantability, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,toughness, repairMaterial);
     }

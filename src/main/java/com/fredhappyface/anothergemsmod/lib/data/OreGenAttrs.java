@@ -4,7 +4,7 @@ import net.minecraft.world.gen.placement.CountRangeConfig;
 
 /**
  * @author FredHappyface
- * @date 2019/07/18
+ * @version latest update 2019.07.18
  *
  * Object holding data for world gen. Uses a harvest level, CountRangeConfig and a veinSize
  */

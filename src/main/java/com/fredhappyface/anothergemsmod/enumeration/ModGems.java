@@ -12,6 +12,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyLoadBase;
 
 import java.util.Locale;
+import java.util.function.Supplier;
 
 public enum ModGems {
     /*
@@ -80,28 +81,29 @@ public enum ModGems {
 
 
         // Tools
-        pickaxe = new LazyLoadBase<>(() -> new PickaxeItem(new ModItemTier(getToolAttrs().getHarvestLevelIn(), getToolAttrs().getMaxUsesIn(), getToolAttrs().getEfficiencyIn(), getToolAttrs().getAttackDamageIn(), getToolAttrs().getEnchantabilityIn(), () -> {
-            return Ingredient.fromItems(getGemItem());}), getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
-        axe = new LazyLoadBase<>(() -> new AxeItem(new ModItemTier(getToolAttrs().getHarvestLevelIn(), getToolAttrs().getMaxUsesIn(), getToolAttrs().getEfficiencyIn(), getToolAttrs().getAttackDamageIn(), getToolAttrs().getEnchantabilityIn(), () -> {
-            return Ingredient.fromItems(getGemItem());}), getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
-        hoe = new LazyLoadBase<>(() -> new HoeItem(new ModItemTier(getToolAttrs().getHarvestLevelIn(), getToolAttrs().getMaxUsesIn(), getToolAttrs().getEfficiencyIn(), getToolAttrs().getAttackDamageIn(), getToolAttrs().getEnchantabilityIn(), () -> {
-            return Ingredient.fromItems(getGemItem());}), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
-        sword  = new LazyLoadBase<>(() -> new SwordItem(new ModItemTier(getToolAttrs().getHarvestLevelIn(), getToolAttrs().getMaxUsesIn(), getToolAttrs().getEfficiencyIn(), getToolAttrs().getAttackDamageIn(), getToolAttrs().getEnchantabilityIn(), () -> {
-            return Ingredient.fromItems(getGemItem());}), getToolAttrs().getSwordAttackDamageIn(), getToolAttrs().getSwordAttackSpeedIn(), getToolAttrs().getItemProperties()));
-        shovel  = new LazyLoadBase<>(() -> new ShovelItem(new ModItemTier(getToolAttrs().getHarvestLevelIn(), getToolAttrs().getMaxUsesIn(), getToolAttrs().getEfficiencyIn(), getToolAttrs().getAttackDamageIn(), getToolAttrs().getEnchantabilityIn(), () -> {
-            return Ingredient.fromItems(getGemItem());}), getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
+
+        Supplier<Ingredient> gemIngredient =  () -> { return Ingredient.fromItems(getGemItem());};
+
+        ModItemTier itemTier = new ModItemTier(getToolAttrs().getHarvestLevelIn(), getToolAttrs().getMaxUsesIn(), getToolAttrs().getEfficiencyIn(), getToolAttrs().getAttackDamageIn(), getToolAttrs().getEnchantabilityIn(), gemIngredient);
+
+
+        pickaxe = new LazyLoadBase<>(() -> new PickaxeItem(itemTier, getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
+        axe = new LazyLoadBase<>(() -> new AxeItem(itemTier, getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
+        hoe = new LazyLoadBase<>(() -> new HoeItem(itemTier, getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
+        sword  = new LazyLoadBase<>(() -> new SwordItem(itemTier, getToolAttrs().getSwordAttackDamageIn(), getToolAttrs().getSwordAttackSpeedIn(), getToolAttrs().getItemProperties()));
+        shovel  = new LazyLoadBase<>(() -> new ShovelItem(itemTier, getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
 
 
         // Armour (enchantability is from tool attributes)
-        helm = new LazyLoadBase<>(() -> new ArmorItem(new ModArmorMaterial(getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), () -> {
-            return Ingredient.fromItems(getGemItem());}), EquipmentSlotType.HEAD, getArmorAttrs().getItemProperties()));
-        chest = new LazyLoadBase<>(() -> new ArmorItem(new ModArmorMaterial(getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), () -> {
-                  return Ingredient.fromItems(getGemItem());}), EquipmentSlotType.CHEST, getArmorAttrs().getItemProperties()));
-        leggings = new LazyLoadBase<>(() -> new ArmorItem(new ModArmorMaterial(getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), () -> {
-            return Ingredient.fromItems(getGemItem());}), EquipmentSlotType.LEGS, getArmorAttrs().getItemProperties()));
-        boots = new LazyLoadBase<>(() -> new ArmorItem(new ModArmorMaterial(getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), () -> {
-            return Ingredient.fromItems(getGemItem());}), EquipmentSlotType.FEET, getArmorAttrs().getItemProperties()));
 
+        ModArmorMaterial armorMaterial = new ModArmorMaterial(getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), gemIngredient);
+
+        helm = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.HEAD, getArmorAttrs().getItemProperties()));
+        chest = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.CHEST, getArmorAttrs().getItemProperties()));
+        leggings = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.LEGS, getArmorAttrs().getItemProperties()));
+        boots = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.FEET, getArmorAttrs().getItemProperties()));
+
+        
 
     }
 

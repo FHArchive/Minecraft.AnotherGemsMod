@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values": [
-        "anothergemsmod:zirconia_ore"
+        "anothergemsmod:ore/zirconia_ore"
     ]
 }

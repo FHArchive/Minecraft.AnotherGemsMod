@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values": [
-        "anothergemsmod:aquamarine_ore"
+        "anothergemsmod:ore/aquamarine_ore"
     ]
 }

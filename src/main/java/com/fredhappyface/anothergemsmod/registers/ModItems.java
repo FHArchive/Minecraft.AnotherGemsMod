@@ -23,6 +23,10 @@ public class ModItems {
             return;
         }
 
+        // Namespaces
+        String TOOLS  = "tools/";
+        String ARMOUR  = "armor/";
+
 
         // Blocks
         BLOCKS_TO_REGISTER.forEach(ModItems::register);
@@ -36,34 +40,34 @@ public class ModItems {
 
         // Tools
         for (ModGems gem : ModGems.values()) {
-            register(gem.getName()+ "_pickaxe", gem.getPickaxeItem());
+            register(TOOLS + gem.getName()+ "_pickaxe", gem.getPickaxeItem());
         }
         for (ModGems gem : ModGems.values()) {
-            register(gem.getName()+ "_axe", gem.getAxeItem());
+            register(TOOLS + gem.getName()+ "_axe", gem.getAxeItem());
         }
         for (ModGems gem : ModGems.values()) {
-            register(gem.getName()+ "_hoe", gem.getHoeItem());
+            register(TOOLS + gem.getName()+ "_hoe", gem.getHoeItem());
         }
         for (ModGems gem : ModGems.values()) {
-            register(gem.getName()+ "_shovel", gem.getShovelItem());
+            register(TOOLS + gem.getName()+ "_shovel", gem.getShovelItem());
         }
         for (ModGems gem : ModGems.values()) {
-            register(gem.getName()+ "_sword", gem.getSwordItem());
+            register(TOOLS + gem.getName()+ "_sword", gem.getSwordItem());
         }
 
         // Armour
         if(Main.isDevBuild()) {
             for (ModGems gem : ModGems.values()) {
-                register(gem.getName() + "_helm", gem.getHelm());
+                register(ARMOUR + gem.getName() + "_helm", gem.getHelm());
             }
             for (ModGems gem : ModGems.values()) {
-                register(gem.getName() + "_chest", gem.getChest());
+                register(ARMOUR + gem.getName() + "_chest", gem.getChest());
             }
             for (ModGems gem : ModGems.values()) {
-                register(gem.getName() + "_leggings", gem.getLeggings());
+                register(ARMOUR + gem.getName() + "_leggings", gem.getLeggings());
             }
             for (ModGems gem : ModGems.values()) {
-                register(gem.getName() + "_boots", gem.getBoots());
+                register(ARMOUR + gem.getName() + "_boots", gem.getBoots());
             }
         }
 
@@ -73,7 +77,7 @@ public class ModItems {
      * Register an item to the creative mode tab and to the game
      * @param name name of the item (unlocalized)
      * @param item the item object
-     * @return
+     * @return item
      */
     private static <T extends Item> T register(String name, T item){
         ResourceLocation id = Main.getId(name);

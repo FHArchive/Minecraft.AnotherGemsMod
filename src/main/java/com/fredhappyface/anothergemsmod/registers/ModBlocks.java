@@ -38,11 +38,11 @@ public class ModBlocks {
 
         // Storage Blocks
         for (ModGems gem : ModGems.values()) {
-            register(gem.getName() + "_block", gem.getStorageBlock());
+            register("storage_block/" + gem.getName() + "_block", gem.getStorageBlock());
         }
         // Ores
         for (ModGems gem : ModGems.values()) {
-            register(gem.getName() + "_ore", gem.getOreBlock());
+            register("ore/" +gem.getName() + "_ore", gem.getOreBlock());
         }
 
     }
