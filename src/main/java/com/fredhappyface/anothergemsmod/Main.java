@@ -16,6 +16,7 @@ import java.util.Optional;
 public class Main
 {
 
+    @SuppressWarnings("SpellCheckingInspection")
     public static final String MOD_ID = "anothergemsmod";
 
 
@@ -36,9 +37,10 @@ public class Main
     }
 
 
+    @SuppressWarnings("WeakerAccess")
     @Nonnull
     public static String getVersion() {
-        Optional<? extends ModContainer> o = ModList.get().getModContainerById(MOD_ID);
+        final Optional<? extends ModContainer> o = ModList.get().getModContainerById(MOD_ID);
         if (o.isPresent()) {
             return o.get().getModInfo().getVersion().toString();
         }
@@ -50,13 +52,13 @@ public class Main
     Assumes dev if getVersion is none
      */
     public static boolean isDevBuild() {
-        String version = getVersion();
+        final String version = getVersion();
         return "NONE".equals(version);
     }
 
 
     @Nonnull
-    public static ResourceLocation getId(String path) {
+    public static ResourceLocation getId(final String path) {
         return new ResourceLocation(MOD_ID, path);
     }
 }

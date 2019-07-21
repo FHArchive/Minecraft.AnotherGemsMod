@@ -21,7 +21,7 @@ public class ModBlocks {
     public static Block myblock;
      */
 
-    public static void registerAll(RegistryEvent.Register<Block> event){
+    public static void registerAll(final RegistryEvent.Register<Block> event){
 
 
 
@@ -30,7 +30,7 @@ public class ModBlocks {
         }
 
         // Namespaces
-        String DECORATIONS  = "decorations/";
+        final String DECORATIONS  = "decorations/";
 
 
         // Example block registration
@@ -66,11 +66,13 @@ public class ModBlocks {
      * @param block the block object
      * @return block
      */
-    private static <T extends Block> T register(String name, T block){
+    @SuppressWarnings("UnusedReturnValue")
+    private static <T extends Block> T register(final String name, final T block){
         return register(name, block, new BlockItem(block, new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_RESOURCES)));
     }
 
-    private static <T extends Block> T register(String name, T block, ItemGroup itemGroup){
+    @SuppressWarnings({"UnusedReturnValue", "SameParameterValue"})
+    private static <T extends Block> T register(final String name, final T block, final ItemGroup itemGroup){
         return register(name, block, new BlockItem(block, new Item.Properties().group(itemGroup)));
     }
 
@@ -81,8 +83,8 @@ public class ModBlocks {
      * @param item the item to add to the creative tab
      * @return block
      */
-    private static <T extends Block> T register(String name, T block, @Nullable BlockItem item ){
-        ResourceLocation id = Main.getId(name);
+    private static <T extends Block> T register(final String name, final T block, @Nullable final BlockItem item ){
+        final ResourceLocation id = Main.getId(name);
         block.setRegistryName(id);
         ForgeRegistries.BLOCKS.register(block);
         if (item != null){

@@ -20,24 +20,25 @@ public class ModOreBlock extends net.minecraft.block.OreBlock {
      * Define an ModOreBlock
      * @param harvestLevel level of tool required to obtain ore
      */
-    public ModOreBlock(int harvestLevel) {
+    public ModOreBlock(final int harvestLevel) {
         this(Properties.create(Material.ROCK).hardnessAndResistance(3, 3), harvestLevel);
 
     }
 
-    public ModOreBlock(Properties builder, int harvestLevel) {
+    @SuppressWarnings("WeakerAccess")
+    public ModOreBlock(final Properties builder, final int harvestLevel) {
         super(builder);
         this.harvestLevel = harvestLevel;
     }
 
     @Override
-    public int getExpDrop(BlockState state, IWorldReader reader, BlockPos pos, int fortune, int silktouch) {
+    public int getExpDrop(final BlockState state, final IWorldReader reader, final BlockPos pos, final int fortune, final int silktouch) {
         return silktouch == 0 ? MathHelper.nextInt(RANDOM, 1, 5) : 0;
     }
 
 
     @Override
-    public int getHarvestLevel(BlockState state) {
+    public int getHarvestLevel(final BlockState state) {
         return this.harvestLevel;
     }
 

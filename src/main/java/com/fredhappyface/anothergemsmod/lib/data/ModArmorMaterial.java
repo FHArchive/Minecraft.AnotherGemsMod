@@ -9,6 +9,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+import java.util.Arrays;
 import java.util.function.Supplier;
 
 /**
@@ -19,7 +20,7 @@ import java.util.function.Supplier;
  *       return Ingredient.fromItems(Items.DIAMOND);for diamond armor
  */
 public class ModArmorMaterial implements IArmorMaterial {
-    private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
+    private static final int[] MAX_DAMAGE_ARRAY = {13, 15, 16, 11};
     private final String name;
     private final int maxDamageFactor;
     private final int[] damageReductionAmountArray;
@@ -36,30 +37,31 @@ public class ModArmorMaterial implements IArmorMaterial {
     /**
      * @param name required to load the texture (must add!)
      * @param maxDamageFactor number of hits or used to derive said value?
-     * @param damageReductionAmountArray number of hp to reduce damage by
+     * @param damageReductionArray number of hp to reduce damage by
      * @param enchantability same as for tools
      * @param toughness ???
      * @param repairMaterial Ingredient.fromItems(ITEM)
      */
-    public ModArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, float toughness, Supplier<Ingredient>  repairMaterial) {
-        this(name, maxDamageFactor, damageReductionAmountArray, enchantability, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,toughness, repairMaterial);
+    public ModArmorMaterial(final String name, final int maxDamageFactor, final int[] damageReductionArray, final int enchantability, final float toughness, final Supplier<Ingredient>  repairMaterial) {
+        this(name, maxDamageFactor, damageReductionArray, enchantability, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,toughness, repairMaterial);
     }
 
-    public ModArmorMaterial(String nameIn, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability, SoundEvent soundEvent, float toughness, Supplier<Ingredient> repairMaterial) {
-        this.name = nameIn; // seems unimportant to core function
+    @SuppressWarnings("WeakerAccess")
+    public ModArmorMaterial(final String nameIn, final int maxDamageFactor, final int[] damageReductionArray, final int enchantability, final SoundEvent soundEvent, final float toughness, final Supplier<Ingredient> repairMaterial) {
+        this.name = nameIn;
         this.maxDamageFactor = maxDamageFactor;
-        this.damageReductionAmountArray = damageReductionAmountArray;
+        this.damageReductionAmountArray = Arrays.copyOf(damageReductionArray, damageReductionArray.length);
         this.enchantability = enchantability; // same as for tools
         this.soundEvent = soundEvent;
         this.toughness = toughness;
         this.repairMaterial = new LazyLoadBase<>(repairMaterial);
     }
 
-    public int getDurability(EquipmentSlotType slotIn) {
+    public int getDurability(final EquipmentSlotType slotIn) {
         return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
     }
 
-    public int getDamageReductionAmount(EquipmentSlotType slotIn) {
+    public int getDamageReductionAmount(final EquipmentSlotType slotIn) {
         return this.damageReductionAmountArray[slotIn.getIndex()];
     }
 

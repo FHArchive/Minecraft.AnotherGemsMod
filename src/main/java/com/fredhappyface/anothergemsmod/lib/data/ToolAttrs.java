@@ -13,26 +13,26 @@ import net.minecraft.item.Item;
  */
 public class ToolAttrs {
 
-    private Item.Properties itemProperties = new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_TOOLS);
-    private double NOT_SWORD_MODIFIER = 0.7;
+    private final Item.Properties itemProperties = new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_TOOLS);
+    private static final double NOT_SWORD_MODIFIER = 0.7;
 
 
-    private int attackDamageIn;
-    private float attackSpeedIn;
+    private final int attackDamageIn;
+    private final float attackSpeedIn;
 
     // Used by ModItemTier
-    private int harvestLevelIn;
-    private int maxUsesIn;
-    private float efficiencyIn;
-    private float maxDamageIn;
-    private int enchantabilityIn;
+    private final int harvestLevelIn;
+    private final int maxUsesIn;
+    private final float efficiencyIn;
+    private final float maxDamageIn;
+    private final int enchantabilityIn;
 
     /**
      * Lazy constructor, use if you are hardcoding values for ModItemTier
      * @param attackDamageIn attack damage for sword
      * @param attackSpeedIn attack speed for sword
      */
-    public ToolAttrs(int attackDamageIn, float attackSpeedIn) {
+    public ToolAttrs(final int attackDamageIn, final float attackSpeedIn) {
         this(attackDamageIn, attackSpeedIn, 0,0,0,0,0);
     }
 
@@ -47,7 +47,8 @@ public class ToolAttrs {
      * @param maxDamageIn ??? unknown effect
      * @param enchantabilityIn ??? unknown effect
      */
-    public ToolAttrs(int attackDamageIn, float attackSpeedIn, int harvestLevelIn, int maxUsesIn, float efficiencyIn, float maxDamageIn, int enchantabilityIn) {
+    public ToolAttrs(final int attackDamageIn, final float attackSpeedIn, final int harvestLevelIn, final int maxUsesIn,
+                     final float efficiencyIn, final float maxDamageIn, final int enchantabilityIn) {
         this.attackDamageIn = attackDamageIn;
         this.attackSpeedIn = attackSpeedIn;
         this.harvestLevelIn = harvestLevelIn;
@@ -57,10 +58,12 @@ public class ToolAttrs {
         this.enchantabilityIn = enchantabilityIn;
     }
 
+    @SuppressWarnings("NumericCastThatLosesPrecision")
     public int getAttackDamageIn() {
         return (int)(attackDamageIn * NOT_SWORD_MODIFIER);
     }
 
+    @SuppressWarnings("NumericCastThatLosesPrecision")
     public float getAttackSpeedIn() {
         return (float)(attackSpeedIn * NOT_SWORD_MODIFIER);
     }

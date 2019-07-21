@@ -34,7 +34,7 @@ public class ModItemTier implements IItemTier{
      * @param enchantabilityIn ??? unknown effect
      * @param repairMaterialIn Ingredient.fromItems(ITEM)
      */
-    public ModItemTier(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn, Supplier<Ingredient> repairMaterialIn) {
+    public ModItemTier(final int harvestLevelIn, final int maxUsesIn, final float efficiencyIn, final float attackDamageIn, final int enchantabilityIn, final Supplier<Ingredient> repairMaterialIn) {
         this.harvestLevel = harvestLevelIn;
         this.maxUses = maxUsesIn;
         this.efficiency = efficiencyIn;

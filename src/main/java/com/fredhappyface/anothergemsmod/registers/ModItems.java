@@ -14,18 +14,19 @@ import java.util.Map;
 public class ModItems {
 
 
+    @SuppressWarnings("CollectionWithoutInitialCapacity")
     static final Map<String, BlockItem> BLOCKS_TO_REGISTER = new LinkedHashMap<>();
 
 
-    public static void registerAll(RegistryEvent.Register<Item> event){
+    public static void registerAll(final RegistryEvent.Register<Item> event){
 
         if (!event.getName().equals(ForgeRegistries.ITEMS.getRegistryName())) {
             return;
         }
 
         // Namespaces
-        String TOOLS  = "tools/";
-        String ARMOUR  = "armor/";
+        final String TOOLS  = "tools/";
+        final String ARMOUR  = "armor/";
 
 
         // Blocks
@@ -78,8 +79,9 @@ public class ModItems {
      * @param item the item object
      * @return item
      */
-    private static <T extends Item> T register(String name, T item){
-        ResourceLocation id = Main.getId(name);
+    @SuppressWarnings("UnusedReturnValue")
+    private static <T extends Item> T register(final String name, final T item){
+        final ResourceLocation id = Main.getId(name);
         item.setRegistryName(id);
         ForgeRegistries.ITEMS.register(item);
         return item;

@@ -18,6 +18,7 @@ import net.minecraft.util.LazyLoadBase;
 import java.util.Locale;
 import java.util.function.Supplier;
 
+@SuppressWarnings({"ClassWithTooManyFields", "ClassWithTooManyMethods"})
 public enum ModGems {
     /*
     Create different types of blocks and items from data. eg, gems, ore, storage blocks, tools...
@@ -25,25 +26,25 @@ public enum ModGems {
     Item_base_name: OreGenAttrs, ToolAttrs
      */
     LONSDALEITE(new OreGenAttrs(4,2),
-            new ToolAttrs(6,6f, 4, 2000,15f, 4f, 22),
+            new ToolAttrs(6,6.0f, 4, 2000,15.0f, 4.0f, 22),
             new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)), // hexagonal diamond (12)
     ZIRCONIA(new OreGenAttrs(3,4),
-            new ToolAttrs(5,5f,3,1000,10f,3f,15),
+            new ToolAttrs(5,5.0f,3,1000,10.0f,3.0f,15),
             new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)), // 8.5
     AQUAMARINE(new OreGenAttrs(3,6),
-            new ToolAttrs(4,4f,3,700,7f,2.5f,10),
+            new ToolAttrs(4,4.0f,3,700,7.0f,2.5f,10),
             new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)), // 8
     GALAXITE(new OreGenAttrs(2,8),
-            new ToolAttrs(4,3f,2,400,5f,2f,8),
+            new ToolAttrs(4,3.0f,2,400,5.0f,2.0f,8),
             new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)), // 8
     ZIRCON(new OreGenAttrs(2,11),
-            new ToolAttrs(3,3f,2,100,3f,1.5f,4),
+            new ToolAttrs(3,3.0f,2,100,3.0f,1.5f,4),
             new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)); // 7
 
     // Attrs
-    private OreGenAttrs oreGenAttrs;
-    private ToolAttrs toolAttrs;
-    private ArmorAttrs armorAttrs;
+    private final OreGenAttrs oreGenAttrs;
+    private final ToolAttrs toolAttrs;
+    private final ArmorAttrs armorAttrs;
 
 
     // Resources
@@ -74,7 +75,7 @@ public enum ModGems {
 
 
 
-    ModGems(OreGenAttrs oreGenAttrs, ToolAttrs toolAttrs, ArmorAttrs armorAttrs) {
+    ModGems(final OreGenAttrs oreGenAttrs, final ToolAttrs toolAttrs, final ArmorAttrs armorAttrs) {
         // Attrs
         this.oreGenAttrs = oreGenAttrs;
         this.toolAttrs = toolAttrs;
@@ -88,7 +89,7 @@ public enum ModGems {
 
         // Blocks
 
-        Block.Properties gemBlockProperties = Block.Properties.create(Material.IRON).hardnessAndResistance(5, 6).sound(SoundType.METAL);
+        final Block.Properties gemBlockProperties = Block.Properties.create(Material.IRON).hardnessAndResistance(5.0f, 6.0f).sound(SoundType.METAL);
 
         storageBlock = new LazyLoadBase<>(() -> new Block(gemBlockProperties));
         bricks = new LazyLoadBase<>(() -> new Block(gemBlockProperties));
@@ -101,9 +102,9 @@ public enum ModGems {
 
         // Tools
 
-        Supplier<Ingredient> gemIngredient =  () -> { return Ingredient.fromItems(getGemItem());};
+        final Supplier<Ingredient> gemIngredient =  () -> { return Ingredient.fromItems(getGemItem());};
 
-        ModItemTier itemTier = new ModItemTier(getToolAttrs().getHarvestLevelIn(), getToolAttrs().getMaxUsesIn(), getToolAttrs().getEfficiencyIn(), getToolAttrs().getAttackDamageIn(), getToolAttrs().getEnchantabilityIn(), gemIngredient);
+        final ModItemTier itemTier = new ModItemTier(getToolAttrs().getHarvestLevelIn(), getToolAttrs().getMaxUsesIn(), getToolAttrs().getEfficiencyIn(), getToolAttrs().getAttackDamageIn(), getToolAttrs().getEnchantabilityIn(), gemIngredient);
 
 
         pickaxe = new LazyLoadBase<>(() -> new PickaxeItem(itemTier, getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
@@ -115,7 +116,7 @@ public enum ModGems {
 
         // Armour (enchantability is from tool attributes)
 
-        ModArmorMaterial armorMaterial = new ModArmorMaterial(Main.MOD_ID + ":" + getName(),getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), gemIngredient);
+        final ModArmorMaterial armorMaterial = new ModArmorMaterial(Main.MOD_ID + ":" + getName(),getArmorAttrs().getMaxDamageFactor(), getArmorAttrs().getDamageReductionAmountArray(), getToolAttrs().getEnchantabilityIn(),  getArmorAttrs().getToughness(), gemIngredient);
 
         helm = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.HEAD, getArmorAttrs().getItemProperties()));
         chest = new LazyLoadBase<>(() -> new ArmorItem(armorMaterial, EquipmentSlotType.CHEST, getArmorAttrs().getItemProperties()));

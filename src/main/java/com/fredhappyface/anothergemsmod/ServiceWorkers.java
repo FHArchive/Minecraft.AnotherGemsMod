@@ -28,18 +28,21 @@ class ServiceWorkers {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private static void commonSetup(FMLCommonSetupEvent event) {
+    @SuppressWarnings("unused")
+    private static void commonSetup(final FMLCommonSetupEvent event) {
         DeferredWorkQueue.runLater(WorldGen::setupOreGeneration);
     }
 
+    @SuppressWarnings("unused")
     private static void enqueueIMC(final InterModEnqueueEvent event) {
     }
 
+    @SuppressWarnings("unused")
     private static void processIMC(final InterModProcessEvent event) {
     }
 
-    @SubscribeEvent
-    public void serverStarting(FMLServerStartingEvent event) {
+    @SubscribeEvent @SuppressWarnings("unused")
+    public void serverStarting(final FMLServerStartingEvent event) {
     }
 
     /*
@@ -50,7 +53,8 @@ class ServiceWorkers {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(Client::clientSetup);
         }
 
-        private static void clientSetup(FMLClientSetupEvent event) {
+        @SuppressWarnings("unused")
+        private static void clientSetup(final FMLClientSetupEvent event) {
         }
     }
 
@@ -62,7 +66,8 @@ class ServiceWorkers {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(Server::serverSetup);
         }
 
-        private static void serverSetup(FMLDedicatedServerSetupEvent event) {
+        @SuppressWarnings("unused")
+        private static void serverSetup(final FMLDedicatedServerSetupEvent event) {
         }
     }
 }

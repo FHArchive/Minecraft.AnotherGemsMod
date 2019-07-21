@@ -9,16 +9,16 @@ import net.minecraft.world.gen.placement.CountRangeConfig;
  * Object holding data for world gen. Uses a harvest level, CountRangeConfig and a veinSize
  */
 public class OreGenAttrs {
-    private int harvestLevel;
-    private CountRangeConfig countRangeConfig;
-    private int veinSize;
+    private final int harvestLevel;
+    private final CountRangeConfig countRangeConfig;
+    private final int veinSize;
 
     /**
      * Lazy constructor, use if you are happy with default ore clusters per chunk
      * @param harvestLevel pick level required to obtain tbe ore
      * @param veinSize number of ore in a vein
      */
-    public OreGenAttrs(int harvestLevel, int veinSize){
+    public OreGenAttrs(final int harvestLevel, final int veinSize){
         this(harvestLevel, new CountRangeConfig(15, 20,30, 50), veinSize);
 
     }
@@ -30,7 +30,8 @@ public class OreGenAttrs {
      *                         Minimum y level. TopOffset - y = World surface - value?? INFO NEEDED. Maximum - Maximum y level
      * @param veinSize number of ore in a vein
      */
-    public OreGenAttrs(int harvestLevel, CountRangeConfig countRangeConfig, int veinSize){
+    @SuppressWarnings("WeakerAccess")
+    public OreGenAttrs(final int harvestLevel, final CountRangeConfig countRangeConfig, final int veinSize){
         this.harvestLevel = harvestLevel;
         this.countRangeConfig = countRangeConfig;
         this.veinSize = veinSize;

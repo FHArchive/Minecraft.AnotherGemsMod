@@ -3,6 +3,8 @@ package com.fredhappyface.anothergemsmod.lib.data;
 import com.fredhappyface.anothergemsmod.CreativeTabGroups;
 import net.minecraft.item.Item;
 
+import java.util.Arrays;
+
 /**
  * @author FredHappyface
  * @version latest update 2019.07.18
@@ -11,7 +13,7 @@ import net.minecraft.item.Item;
  */
 public class ArmorAttrs {
 
-    private Item.Properties itemProperties = new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_ARMOUR);
+    private final Item.Properties itemProperties = new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_ARMOUR);
 
 
     private final int maxDamageFactor;
@@ -21,12 +23,12 @@ public class ArmorAttrs {
     /**
      *
      * @param maxDamageFactor number of hits or used to derive said value?
-     * @param damageReductionAmountArray number of hp to reduce damage by
+     * @param damageReductionArray number of hp to reduce damage by
      * @param toughness ???
      */
-    public ArmorAttrs(int maxDamageFactor, int[] damageReductionAmountArray, float toughness) {
+    public ArmorAttrs(final int maxDamageFactor, final int[] damageReductionArray, final float toughness) {
         this.maxDamageFactor = maxDamageFactor;
-        this.damageReductionAmountArray = damageReductionAmountArray;
+        this.damageReductionAmountArray = Arrays.copyOf(damageReductionArray, damageReductionArray.length);
         this.toughness = toughness;
     }
 
@@ -35,7 +37,7 @@ public class ArmorAttrs {
     }
 
     public int[] getDamageReductionAmountArray() {
-        return damageReductionAmountArray;
+        return Arrays.copyOf(damageReductionAmountArray, damageReductionAmountArray.length);
     }
 
     public float getToughness() {
