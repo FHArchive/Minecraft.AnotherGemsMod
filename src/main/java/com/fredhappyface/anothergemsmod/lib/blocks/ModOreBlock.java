@@ -10,7 +10,7 @@ import net.minecraft.world.IWorldReader;
  * @author FredHappyface
  * @version latest update 2019.07.18
  *
- * Custom ore block with custom implementation of get exp and get harvest level
+ * Custom ores block with custom implementation of get exp and get harvest level
  */
 public class ModOreBlock extends net.minecraft.block.OreBlock {
     private final int harvestLevel;
@@ -18,7 +18,7 @@ public class ModOreBlock extends net.minecraft.block.OreBlock {
 
     /**
      * Define an ModOreBlock
-     * @param harvestLevel level of tool required to obtain ore
+     * @param harvestLevel level of tool required to obtain ores
      */
     public ModOreBlock(final int harvestLevel) {
         this(Properties.create(Material.ROCK).hardnessAndResistance(3, 3), harvestLevel);

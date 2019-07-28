@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "anothergemsmod:block/storage_block/zircon_block"
-  }
-}

@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values": [
-        "anothergemsmod:storage_block/zircon_block"
+        "anothergemsmod:storage_blocks/zircon_block"
     ]
 }

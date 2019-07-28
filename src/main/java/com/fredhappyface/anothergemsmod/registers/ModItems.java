@@ -18,15 +18,16 @@ public class ModItems {
     static final Map<String, BlockItem> BLOCKS_TO_REGISTER = new LinkedHashMap<>();
 
 
+    // Namespaces
+    private static final String TOOLS  = "tools/";
+    private static final String ARMOUR  = "armor/";
+
     public static void registerAll(final RegistryEvent.Register<Item> event){
 
         if (!event.getName().equals(ForgeRegistries.ITEMS.getRegistryName())) {
             return;
         }
 
-        // Namespaces
-        final String TOOLS  = "tools/";
-        final String ARMOUR  = "armor/";
 
 
         // Blocks
@@ -35,38 +36,38 @@ public class ModItems {
 
         // Items
         // Gems
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(gem.getName(), gem.getGemItem());
         }
 
         // Tools
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_pickaxe", gem.getPickaxeItem());
         }
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_axe", gem.getAxeItem());
         }
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_hoe", gem.getHoeItem());
         }
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_shovel", gem.getShovelItem());
         }
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_sword", gem.getSwordItem());
         }
 
         // Armour
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(ARMOUR + gem.getName() + "_helm", gem.getHelm());
         }
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(ARMOUR + gem.getName() + "_chest", gem.getChest());
         }
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(ARMOUR + gem.getName() + "_leggings", gem.getLeggings());
         }
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(ARMOUR + gem.getName() + "_boots", gem.getBoots());
         }
     }
@@ -81,8 +82,8 @@ public class ModItems {
      */
     @SuppressWarnings("UnusedReturnValue")
     private static <T extends Item> T register(final String name, final T item){
-        final ResourceLocation id = Main.getId(name);
-        item.setRegistryName(id);
+        final ResourceLocation resourceId = Main.getId(name);
+        item.setRegistryName(resourceId);
         ForgeRegistries.ITEMS.register(item);
         return item;
 

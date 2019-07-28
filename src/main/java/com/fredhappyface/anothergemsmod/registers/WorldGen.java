@@ -14,10 +14,10 @@ public class WorldGen {
 
 
     public static void setupOreGeneration() {
-        for (BiomeManager.BiomeType btype : BiomeManager.BiomeType.values()) {
-            for (BiomeManager.BiomeEntry biomeEntry : BiomeManager.getBiomes(btype)) {
+        for (final BiomeManager.BiomeType btype : BiomeManager.BiomeType.values()) {
+            for (final BiomeManager.BiomeEntry biomeEntry : BiomeManager.getBiomes(btype)) {
 
-                for(ModGems gem : ModGems.values()){
+                for(final ModGems gem : ModGems.values()){
                     biomeEntry.biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
                             gem.getOreBlock().getDefaultState(), gem.getOreGenAttrs().getVeinSize()), Placement.COUNT_RANGE, gem.getOreGenAttrs().getCountRangeConfig()));
 

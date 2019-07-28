@@ -21,6 +21,10 @@ public class ModBlocks {
     public static Block myblock;
      */
 
+    // Namespaces
+    private static final String DECORATIONS  = "decorations/";
+
+
     public static void registerAll(final RegistryEvent.Register<Block> event){
 
 
@@ -29,8 +33,6 @@ public class ModBlocks {
             return;
         }
 
-        // Namespaces
-        final String DECORATIONS  = "decorations/";
 
 
         // Example block registration
@@ -41,15 +43,15 @@ public class ModBlocks {
          */
 
         // Storage Blocks
-        for (ModGems gem : ModGems.values()) {
-            register("storage_block/" + gem.getName() + "_block", gem.getStorageBlock());
+        for (final ModGems gem : ModGems.values()) {
+            register("storage_blocks/" + gem.getName() + "_block", gem.getStorageBlock());
         }
         // Ores
-        for (ModGems gem : ModGems.values()) {
-            register("ore/" +gem.getName() + "_ore", gem.getOreBlock());
+        for (final ModGems gem : ModGems.values()) {
+            register("ores/" +gem.getName() + "_ore", gem.getOreBlock());
         }
         // Decoration Blocks, Slabs, Stairs
-        for (ModGems gem : ModGems.values()) {
+        for (final ModGems gem : ModGems.values()) {
             register(DECORATIONS + gem.getName() + "_bricks", gem.getBricks(), CreativeTabGroups.ITEM_GROUP_DECORATION);
             register(DECORATIONS + gem.getName() + "_brick_slab", gem.getBrickSlab(), CreativeTabGroups.ITEM_GROUP_DECORATION);
             register(DECORATIONS + gem.getName() + "_brick_stairs", gem.getBrickStairs(), CreativeTabGroups.ITEM_GROUP_DECORATION);
@@ -84,8 +86,8 @@ public class ModBlocks {
      * @return block
      */
     private static <T extends Block> T register(final String name, final T block, @Nullable final BlockItem item ){
-        final ResourceLocation id = Main.getId(name);
-        block.setRegistryName(id);
+        final ResourceLocation resourceId = Main.getId(name);
+        block.setRegistryName(resourceId);
         ForgeRegistries.BLOCKS.register(block);
         if (item != null){
             ModItems.BLOCKS_TO_REGISTER.put(name, item);

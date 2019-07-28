@@ -14,9 +14,9 @@ public class OreGenAttrs {
     private final int veinSize;
 
     /**
-     * Lazy constructor, use if you are happy with default ore clusters per chunk
-     * @param harvestLevel pick level required to obtain tbe ore
-     * @param veinSize number of ore in a vein
+     * Lazy constructor, use if you are happy with default ores clusters per chunk
+     * @param harvestLevel pick level required to obtain tbe ores
+     * @param veinSize number of ores in a vein
      */
     public OreGenAttrs(final int harvestLevel, final int veinSize){
         this(harvestLevel, new CountRangeConfig(15, 20,30, 50), veinSize);
@@ -25,10 +25,10 @@ public class OreGenAttrs {
 
     /**
      *
-     * @param harvestLevel pick level required to obtain tbe ore
-     * @param countRangeConfig settings for the ore clusters in a chunk. Count - Number of clusters per chunk. BottomOffset -
+     * @param harvestLevel pick level required to obtain tbe ores
+     * @param countRangeConfig settings for the ores clusters in a chunk. Count - Number of clusters per chunk. BottomOffset -
      *                         Minimum y level. TopOffset - y = World surface - value?? INFO NEEDED. Maximum - Maximum y level
-     * @param veinSize number of ore in a vein
+     * @param veinSize number of ores in a vein
      */
     @SuppressWarnings("WeakerAccess")
     public OreGenAttrs(final int harvestLevel, final CountRangeConfig countRangeConfig, final int veinSize){

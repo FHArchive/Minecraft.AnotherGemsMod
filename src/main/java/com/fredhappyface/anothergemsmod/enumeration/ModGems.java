@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 @SuppressWarnings({"ClassWithTooManyFields", "ClassWithTooManyMethods"})
 public enum ModGems {
     /*
-    Create different types of blocks and items from data. eg, gems, ore, storage blocks, tools...
+    Create different types of blocks and items from data. eg, gems, ores, storage blocks, tools...
     Hardcode values
     Item_base_name: OreGenAttrs, ToolAttrs
      */
