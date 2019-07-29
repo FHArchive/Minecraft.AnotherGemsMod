@@ -43,32 +43,21 @@ public class ModItems {
         // Tools
         for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_pickaxe", gem.getPickaxeItem());
-        }
-        for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_axe", gem.getAxeItem());
-        }
-        for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_hoe", gem.getHoeItem());
-        }
-        for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_shovel", gem.getShovelItem());
-        }
-        for (final ModGems gem : ModGems.values()) {
             register(TOOLS + gem.getName()+ "_sword", gem.getSwordItem());
+            register(TOOLS + gem.getName()+ "_shears", gem.getShearsItem());
+            //register(TOOLS + gem.getName() + "_shield", gem.getShieldItem());
         }
 
         // Armour
         for (final ModGems gem : ModGems.values()) {
             register(ARMOUR + gem.getName() + "_helm", gem.getHelm());
-        }
-        for (final ModGems gem : ModGems.values()) {
             register(ARMOUR + gem.getName() + "_chest", gem.getChest());
-        }
-        for (final ModGems gem : ModGems.values()) {
             register(ARMOUR + gem.getName() + "_leggings", gem.getLeggings());
-        }
-        for (final ModGems gem : ModGems.values()) {
             register(ARMOUR + gem.getName() + "_boots", gem.getBoots());
+
         }
     }
 

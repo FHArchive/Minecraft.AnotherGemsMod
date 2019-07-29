@@ -2,13 +2,9 @@ package com.fredhappyface.anothergemsmod.enumeration;
 
 import com.fredhappyface.anothergemsmod.CreativeTabGroups;
 import com.fredhappyface.anothergemsmod.Main;
-import com.fredhappyface.anothergemsmod.lib.blocks.ModOreBlock;
-import com.fredhappyface.anothergemsmod.lib.blocks.ModStairsBlock;
+import com.fredhappyface.anothergemsmod.lib.blocks.*;
 import com.fredhappyface.anothergemsmod.lib.data.*;
-import net.minecraft.block.Block;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
@@ -52,6 +48,14 @@ public enum ModGems {
     private final LazyLoadBase<Item> gemItem;
 
     // Blocks
+    private final LazyLoadBase<HopperBlock> hopper;
+
+    private final LazyLoadBase<ModPaneBlock> bars;
+    private final LazyLoadBase<ModDoorBlock> door;
+    private final LazyLoadBase<RedstoneLampBlock> lamp;
+    private final LazyLoadBase<InvertedRedstoneLampBlock> lampInverted;
+
+
     private final LazyLoadBase<Block> storageBlock;
     private final LazyLoadBase<Block> bricks;
     private final LazyLoadBase<SlabBlock> slab;
@@ -61,6 +65,10 @@ public enum ModGems {
     //private final LazyLoadBase<StairsBlock> brickWall;
 
     // Tools
+
+    private final LazyLoadBase<ShearsItem> shears;
+    //private final LazyLoadBase<ShieldItem> shield;
+
     private final LazyLoadBase<PickaxeItem> pickaxe;
     private final LazyLoadBase<AxeItem> axe;
     private final LazyLoadBase<ShovelItem> shovel;
@@ -86,10 +94,20 @@ public enum ModGems {
         oreBlock = new LazyLoadBase<>(() -> new ModOreBlock(oreGenAttrs.getHarvestLevel()));
         gemItem = new LazyLoadBase<>(() -> new Item(new Item.Properties().group(CreativeTabGroups.ITEM_GROUP_RESOURCES)));
 
-
         // Blocks
 
         final Block.Properties gemBlockProperties = Block.Properties.create(Material.IRON).hardnessAndResistance(5.0f, 6.0f).sound(SoundType.METAL);
+
+        hopper = new LazyLoadBase<>(() -> new HopperBlock(gemBlockProperties));
+
+        bars = new LazyLoadBase<>(() -> new ModPaneBlock(gemBlockProperties));
+        door = new LazyLoadBase<>(() -> new ModDoorBlock(gemBlockProperties));
+
+        final  Block.Properties gemLightProperties = Block.Properties.create(Material.REDSTONE_LIGHT).hardnessAndResistance(0.3f, 15).lightValue(15);
+
+        lamp = new LazyLoadBase<>(() -> new RedstoneLampBlock(gemLightProperties));
+        lampInverted = new LazyLoadBase<>(() -> new InvertedRedstoneLampBlock(gemLightProperties));
+
 
         storageBlock = new LazyLoadBase<>(() -> new Block(gemBlockProperties));
         bricks = new LazyLoadBase<>(() -> new Block(gemBlockProperties));
@@ -106,6 +124,9 @@ public enum ModGems {
 
         final ModItemTier itemTier = new ModItemTier(getToolAttrs().getHarvestLevelIn(), getToolAttrs().getMaxUsesIn(), getToolAttrs().getEfficiencyIn(), getToolAttrs().getAttackDamageIn(), getToolAttrs().getEnchantabilityIn(), gemIngredient);
 
+
+        shears = new LazyLoadBase<>(() -> new ShearsItem(getToolAttrs().getItemProperties()));
+        //shield = new LazyLoadBase<>(() -> new ShieldItem(getToolAttrs().getItemProperties()));
 
         pickaxe = new LazyLoadBase<>(() -> new PickaxeItem(itemTier, getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
         axe = new LazyLoadBase<>(() -> new AxeItem(itemTier, getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
@@ -155,6 +176,14 @@ public enum ModGems {
 
 
     // Blocks
+
+    public HopperBlock getHopper(){return hopper.getValue();}
+
+    public ModPaneBlock getBars(){return bars.getValue();}
+    public ModDoorBlock getDoor(){return door.getValue();}
+    public RedstoneLampBlock getLamp(){return lamp.getValue();}
+    public InvertedRedstoneLampBlock getLampInverted(){return lampInverted.getValue();}
+
     public Block getStorageBlock() {
         return storageBlock.getValue();
     }
@@ -175,6 +204,10 @@ public enum ModGems {
     }
 
     // Tools
+
+    public ShearsItem getShearsItem(){return  shears.getValue();}
+    //public ShieldItem getShieldItem(){return shield.getValue(); }
+
     public PickaxeItem getPickaxeItem(){
         return  pickaxe.getValue();
     }

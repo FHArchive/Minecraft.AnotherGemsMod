@@ -47,6 +47,12 @@
   "item.anothergemsmod.tools.zircon_sword": "Zircon Sword",
   "item.anothergemsmod.tools.zirconia_sword": "Zirconia Sword",
 
+  "item.anothergemsmod.tools.aquamarine_shears": "Aquamarine Shears",
+  "item.anothergemsmod.tools.galaxite_shears": "Galaxite Shears",
+  "item.anothergemsmod.tools.lonsdaleite_shears": "Lonsdaleite Shears",
+  "item.anothergemsmod.tools.zircon_shears": "Zircon Shears",
+  "item.anothergemsmod.tools.zirconia_shears": "Zirconia Shears",
+
   "item.anothergemsmod.armor.aquamarine_boots": "Aquamarine Boots",
   "item.anothergemsmod.armor.galaxite_boots": "Galaxite Boots",
   "item.anothergemsmod.armor.lonsdaleite_boots": "Lonsdaleite Boots",
@@ -96,6 +102,36 @@
   "block.anothergemsmod.decorations.lonsdaleite_slab": "Lonsdaleite Slab",
   "block.anothergemsmod.decorations.zircon_slab": "Zircon Slab",
   "block.anothergemsmod.decorations.zirconia_slab": "Zirconia Slab",
+
+  "block.anothergemsmod.decorations.aquamarine_bars": "Aquamarine Bars",
+  "block.anothergemsmod.decorations.galaxite_bars": "Galaxite Bars",
+  "block.anothergemsmod.decorations.lonsdaleite_bars": "Lonsdaleite Bars",
+  "block.anothergemsmod.decorations.zircon_bars": "Zircon Bars",
+  "block.anothergemsmod.decorations.zirconia_bars": "Zirconia Bars",
+
+  "block.anothergemsmod.decorations.aquamarine_door": "Aquamarine Door",
+  "block.anothergemsmod.decorations.galaxite_door": "Galaxite Door",
+  "block.anothergemsmod.decorations.lonsdaleite_door": "Lonsdaleite Door",
+  "block.anothergemsmod.decorations.zircon_door": "Zircon Door",
+  "block.anothergemsmod.decorations.zirconia_door": "Zirconia Door",
+
+  "block.anothergemsmod.decorations.aquamarine_hopper": "Aquamarine Hopper",
+  "block.anothergemsmod.decorations.galaxite_hopper": "Galaxite Hopper",
+  "block.anothergemsmod.decorations.lonsdaleite_hopper": "Lonsdaleite Hopper",
+  "block.anothergemsmod.decorations.zircon_hopper": "Zircon Hopper",
+  "block.anothergemsmod.decorations.zirconia_hopper": "Zirconia Hopper",
+
+  "block.anothergemsmod.decorations.aquamarine_lamp": "Aquamarine Lamp",
+  "block.anothergemsmod.decorations.galaxite_lamp": "Galaxite Lamp",
+  "block.anothergemsmod.decorations.lonsdaleite_lamp": "Lonsdaleite Lamp",
+  "block.anothergemsmod.decorations.zircon_lamp": "Zircon Lamp",
+  "block.anothergemsmod.decorations.zirconia_lamp": "Zirconia Lamp",
+
+  "block.anothergemsmod.decorations.aquamarine_lamp_inverted": "Aquamarine Inverted Lamp",
+  "block.anothergemsmod.decorations.galaxite_lamp_inverted": "Galaxite Inverted Lamp",
+  "block.anothergemsmod.decorations.lonsdaleite_lamp_inverted": "Lonsdaleite Inverted Lamp",
+  "block.anothergemsmod.decorations.zircon_lamp_inverted": "Zircon Inverted Lamp",
+  "block.anothergemsmod.decorations.zirconia_lamp_inverted": "Zirconia Inverted Lamp",
 
   "block.anothergemsmod.decorations.aquamarine_stairs": "Aquamarine Stairs",
   "block.anothergemsmod.decorations.galaxite_stairs": "Galaxite Stairs",
