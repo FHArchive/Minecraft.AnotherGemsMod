@@ -61,7 +61,8 @@ public class ModBlocks {
             register(DECORATIONS + gem.getName() + "_door", gem.getDoor(), CreativeTabGroups.ITEM_GROUP_DECORATION);
             register(DECORATIONS + gem.getName() + "_lamp", gem.getLamp(), CreativeTabGroups.ITEM_GROUP_DECORATION);
             register(DECORATIONS + gem.getName() + "_lamp_inverted", gem.getLampInverted(), CreativeTabGroups.ITEM_GROUP_DECORATION);
-            register(DECORATIONS + gem.getName() + "_hopper", gem.getHopper(), CreativeTabGroups.ITEM_GROUP_DECORATION);
+            //register(DECORATIONS + gem.getName() + "_hopper", gem.getHopperBlock(), CreativeTabGroups.ITEM_GROUP_DECORATION);
+
 
         }
 

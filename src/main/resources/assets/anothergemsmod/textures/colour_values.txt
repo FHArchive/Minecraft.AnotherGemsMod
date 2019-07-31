@@ -1,6 +1,6 @@
-aquamarine = 46CEFF, 46F3FF
-galaxite = 4D4D4D
-lonsdaleite = FC7758, CE957D
-zircon = 5E46DA, 5446AF
-zirconia = EEEEEE
+aquamarine = 46CEFF , 46F3FF
+galaxite = 4D4D4D , 727272 , BFBFBF
+lonsdaleite = FC7758 , CE957D
+zircon = 5E46DA , 5446AF
+zirconia = EEEEEE , e2e2e2
 Note tweaks may be required 

@@ -23,6 +23,7 @@ class ServiceWorkers {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ServiceWorkers::processIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ModBlocks::registerAll);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ModItems::registerAll);
+        //FMLJavaModLoadingContext.get().getModEventBus().addListener(ModTileEntities::registerAll);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

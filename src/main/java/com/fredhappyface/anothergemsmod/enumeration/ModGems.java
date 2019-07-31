@@ -48,7 +48,8 @@ public enum ModGems {
     private final LazyLoadBase<Item> gemItem;
 
     // Blocks
-    private final LazyLoadBase<HopperBlock> hopper;
+    private final LazyLoadBase<HopperBlock> hopperBlock;
+    //private final LazyLoadBase<TileEntityType> hopper;
 
     private final LazyLoadBase<ModPaneBlock> bars;
     private final LazyLoadBase<ModDoorBlock> door;
@@ -98,7 +99,8 @@ public enum ModGems {
 
         final Block.Properties gemBlockProperties = Block.Properties.create(Material.IRON).hardnessAndResistance(5.0f, 6.0f).sound(SoundType.METAL);
 
-        hopper = new LazyLoadBase<>(() -> new HopperBlock(gemBlockProperties));
+        hopperBlock = new LazyLoadBase<>(() -> new HopperBlock(gemBlockProperties));
+        //hopper = new LazyLoadBase<TileEntityType.Builder>(() -> new ModTileEntity.Builder(HopperTileEntity::new, getHopperBlock()).build(null));
 
         bars = new LazyLoadBase<>(() -> new ModPaneBlock(gemBlockProperties));
         door = new LazyLoadBase<>(() -> new ModDoorBlock(gemBlockProperties));
@@ -177,7 +179,8 @@ public enum ModGems {
 
     // Blocks
 
-    public HopperBlock getHopper(){return hopper.getValue();}
+    public HopperBlock getHopperBlock(){return hopperBlock.getValue();}
+    //public TileEntityType getHopper(){return hopper.getValue();}
 
     public ModPaneBlock getBars(){return bars.getValue();}
     public ModDoorBlock getDoor(){return door.getValue();}
