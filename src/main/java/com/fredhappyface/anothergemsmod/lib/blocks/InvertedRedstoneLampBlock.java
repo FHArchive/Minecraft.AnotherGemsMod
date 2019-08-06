@@ -18,13 +18,12 @@ public class InvertedRedstoneLampBlock extends RedstoneLampBlock {
 
     @Override
     /*
-     * getlightValue doesn't seem to be behaving so i am returning 15 as a hard coded
+     * getlightValue doesn't seem to be behaving so I am returning 15 as a hard coded
      * value. This is sufficient for this mod but doesn't make this the best if you
      * wish to set a different value in the blockProperties
      */
-    public int getLightValue(final BlockState p_149750_1_) {
-        //return (Boolean)p_149750_1_.get(LIT) ? 0 : super.getLightValue(p_149750_1_);
-        return p_149750_1_.get(LIT) ? 0 : 15;
+    public int getLightValue(final BlockState state) {
+        return state.get(LIT) ? 0 : 15;
 
     }
 }

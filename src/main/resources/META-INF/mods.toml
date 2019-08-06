@@ -19,7 +19,7 @@ logoFile="anothergemsmod.png" #optional
 authors="FredHappyface" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-1.14.4. This mod includes some world gen, gems with various properties and recipes for various tools and armour. Adds some decoration blocks that can be crafted from the gems too, such as a block of gem, stairs, slabs, and bricks This is a first stab at a Minecraft mod and the main purpose is to become acquainted with the modding framework. '''
+Release 1.14.4. This mod includes some world gen, gems with various properties and recipes for various tools and armour. Adds some decoration blocks that can be crafted from the gems too, such as a block of gem, stairs, slabs, and bricks This is a first stab at a Minecraft mod and the main purpose is to become acquainted with the modding framework. '''
 
 
 

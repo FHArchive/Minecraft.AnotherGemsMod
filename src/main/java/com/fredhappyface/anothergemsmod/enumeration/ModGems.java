@@ -23,24 +23,25 @@ public enum ModGems {
      */
     LONSDALEITE(new OreGenAttrs(4,2),
             new ToolAttrs(6,6.0f, 4, 2000,15.0f, 4.0f, 22),
-            new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)), // hexagonal diamond (12)
+            new ArmorAttrs(36, new int[]{4, 7, 9, 4},  2.0F)), // hexagonal diamond (12)
     ZIRCONIA(new OreGenAttrs(3,4),
             new ToolAttrs(5,5.0f,3,1000,10.0f,3.0f,15),
-            new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)), // 8.5
+            new ArmorAttrs(28, new int[]{3, 6, 8, 3},  1.5F)), // 8.5
     AQUAMARINE(new OreGenAttrs(3,6),
             new ToolAttrs(4,4.0f,3,700,7.0f,2.5f,10),
-            new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)), // 8
+            new ArmorAttrs(23, new int[]{2, 6, 7, 3},  1.0F)), // 8
     GALAXITE(new OreGenAttrs(2,8),
             new ToolAttrs(4,3.0f,2,400,5.0f,2.0f,8),
-            new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)), // 8
+            new ArmorAttrs(19, new int[]{2, 5, 7, 3},  0.5F)), // 8
     ZIRCON(new OreGenAttrs(2,11),
             new ToolAttrs(3,3.0f,2,100,3.0f,1.5f,4),
-            new ArmorAttrs(33, new int[]{3, 6, 8, 3},  2.0F)); // 7
+            new ArmorAttrs(15, new int[]{2, 5, 6, 2},  0.0F)); // 7
 
     // Attrs
     private final OreGenAttrs oreGenAttrs;
     private final ToolAttrs toolAttrs;
     private final ArmorAttrs armorAttrs;
+
 
 
     // Resources
@@ -68,7 +69,6 @@ public enum ModGems {
     // Tools
 
     private final LazyLoadBase<ShearsItem> shears;
-    //private final LazyLoadBase<ShieldItem> shield;
 
     private final LazyLoadBase<PickaxeItem> pickaxe;
     private final LazyLoadBase<AxeItem> axe;
@@ -128,7 +128,6 @@ public enum ModGems {
 
 
         shears = new LazyLoadBase<>(() -> new ShearsItem(getToolAttrs().getItemProperties()));
-        //shield = new LazyLoadBase<>(() -> new ShieldItem(getToolAttrs().getItemProperties()));
 
         pickaxe = new LazyLoadBase<>(() -> new PickaxeItem(itemTier, getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
         axe = new LazyLoadBase<>(() -> new AxeItem(itemTier, getToolAttrs().getAttackDamageIn(), getToolAttrs().getAttackSpeedIn(), getToolAttrs().getItemProperties()));
@@ -209,7 +208,6 @@ public enum ModGems {
     // Tools
 
     public ShearsItem getShearsItem(){return  shears.getValue();}
-    //public ShieldItem getShieldItem(){return shield.getValue(); }
 
     public PickaxeItem getPickaxeItem(){
         return  pickaxe.getValue();

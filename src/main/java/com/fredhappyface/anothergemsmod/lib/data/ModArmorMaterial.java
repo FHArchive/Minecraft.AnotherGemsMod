@@ -30,9 +30,14 @@ public class ModArmorMaterial implements IArmorMaterial {
     private final LazyLoadBase<Ingredient> repairMaterial;
 
 
-    // eg ModArmorMaterial("diamond", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
-    //      return Ingredient.fromItems(Items.DIAMOND);
-    //   }),
+    /*
+     eg ModArmorMaterial("diamond", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
+          return Ingredient.fromItems(Items.DIAMOND);
+       }),
+
+       FEET LEGS CHEST HEAD
+
+     */
 
     /**
      * @param name required to load the texture (must add!)
