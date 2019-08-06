@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 /**
  * @author FredHappyface
- * @version latest update 2019.07.18
+ * @version latest update 2019.08.06
  *
  * Set the properties of modded armor eg. new ModArmorMaterial("diamond", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
  *       return Ingredient.fromItems(Items.DIAMOND);for diamond armor

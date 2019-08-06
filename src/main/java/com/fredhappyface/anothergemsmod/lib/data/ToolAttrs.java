@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 
 /**
  * @author FredHappyface
- * @version latest update 2019.07.18
+ * @version latest update 2019.08.06
  *
  * Object holding data for tool attributes. harvestLevelIn, maxUsesIn, efficiencyIn, maxDamageIn, enchantabilityIn is used
  * by ModItemTier

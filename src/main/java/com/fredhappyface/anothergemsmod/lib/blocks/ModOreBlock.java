@@ -8,7 +8,7 @@ import net.minecraft.world.IWorldReader;
 
 /**
  * @author FredHappyface
- * @version latest update 2019.07.18
+ * @version latest update 2019.08.06
  *
  * Custom ores block with custom implementation of get exp and get harvest level
  */

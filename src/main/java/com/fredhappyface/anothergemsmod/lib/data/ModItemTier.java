@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 
 /**
  * @author FredHappyface
- * @version latest update 2019.07.18
+ * @version latest update 2019.08.06
  *
  * Set the tier of a modded item eg. new ModItemTier(3, 1561, 8.0F, 3.0F, 10, () -> {
  *       return Ingredient.fromItems(Items.DIAMOND); for a diamond tool

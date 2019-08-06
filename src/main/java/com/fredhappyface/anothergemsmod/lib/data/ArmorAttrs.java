@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 /**
  * @author FredHappyface
- * @version latest update 2019.07.18
+ * @version latest update 2019.08.06
  *
  * Object holding data for armor attributes
  */

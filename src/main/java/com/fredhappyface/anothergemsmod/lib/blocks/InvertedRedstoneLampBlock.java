@@ -3,10 +3,16 @@ package com.fredhappyface.anothergemsmod.lib.blocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneLampBlock;
 
+/**
+ * @author FredHappyface
+ * @version latest update 2019.08.06
+ *
+ * Creates an inverted light block like has been present in various mods over the
+ * ages.
+ */
 public class InvertedRedstoneLampBlock extends RedstoneLampBlock {
     /**
-     * Creates an inverted light block like has been present in various mods over the
-     * ages. Example usage:
+     * Example usage:
      * final  Block.Properties gemLightProperties = Block.Properties.create(Material.REDSTONE_LIGHT)
      * .hardnessAndResistance(0.3f, 15).lightValue(15);
      * @param blockProperties pass a set of properties into the block such as the desired
